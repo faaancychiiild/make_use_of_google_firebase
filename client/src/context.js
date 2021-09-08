@@ -2,6 +2,8 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useHistory } from 'react-router';
+import app from './firebase';
+
 
 export const Context = React.createContext();
 export const Auth = ({children}) => {
@@ -18,7 +20,7 @@ export const Auth = ({children}) => {
     }, [currentUser, history]);
   
     if(pending){
-      return <>Loading...</>
+      return <div id="loader"><div id="loading"></div></div>
     }
     return (
         <Context.Provider value={currentUser}>
