@@ -44,7 +44,7 @@ const SignUp = () => {
             </FormControl>
             <div>
                 <Button margin="normal" variant='contained' type="submit" className=' btn'>Sign Up</Button>
-                <Button onClick={() => history.push('/')} margin="dense" variant='contained' className=' btn'>Log in</Button>
+                <Button onClick={() => history.push('/')} margin="dense" variant='outlined' className=' btn-1'>Log in</Button>
             </div>
         </form>
     )

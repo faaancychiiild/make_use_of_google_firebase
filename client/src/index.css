@@ -12,13 +12,15 @@ code {
   flex-direction: column;
   align-items: center;
 }
-.btn {
-  background-color: #afab76 !important;
+.btn, .btn-1 {
   color: #000 !important;
   width: 100px;
   height: 40px;
   margin: 20px !important;
   display: inline-block;
+}
+.btn {
+  background-color: #afab76 !important;
 }
 .form-elements {
   display: block !important;
@@ -28,9 +30,11 @@ code {
   padding: 5px 100px 5px 0;
 }
 h4 {
-  text-transform: capitalize;
+  text-transform: uppercase;
   font-weight: 400;
-  font-style: oblique;
+  background-color: yellow;
+  padding: 15px;
+  border-radius: 10px;
 }
 #loader {
   display: flex;
@@ -44,10 +48,14 @@ h4 {
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  animation: spin 2s linear infinite;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+.kakao-icon {
+  display: flex;
+  justify-content: center;
 }

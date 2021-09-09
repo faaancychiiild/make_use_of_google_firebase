@@ -9,8 +9,9 @@ const LogIn = () => {
         const { email, password } = e.target.elements;
         let auth = getAuth();
         await signInWithEmailAndPassword(auth, email.value, password.value)
-        .then(() => {
+        .then((user) => {
           history.push('/home');
+          console.log(user);
         })
         .catch((err) => {
           console.log(err.code, err.message);
@@ -30,7 +31,7 @@ const LogIn = () => {
           </FormControl>
           <div>
             <Button type="submit" margin="dense" variant='contained' className='btn'>Log in</Button>
-            <Button onClick={() => history.push('/sign_up')} margin="dense" variant='contained' className='btn'>Sign up</Button>
+            <Button onClick={() => history.push('/sign_up')} margin="dense" variant='outlined' className='btn-1'>Sign up</Button>
           </div>
         </form>
       </div>
