@@ -2,14 +2,15 @@ import React from 'react';
 import { getAuth, signOut } from "firebase/auth";
 import { useHistory } from 'react-router-dom';
 import { Context } from '../context';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 const Home = () => {
+    
     let currentUser = useContext(Context);
     let history = useHistory();
     const handleOut = () => {
         const auth = getAuth();
         signOut(auth).then(() => {
-            history.push('/');
+            history.goBack();
         }).catch((err) => {
             console.error(err);
         });

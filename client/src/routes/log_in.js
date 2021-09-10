@@ -10,7 +10,6 @@ const LogIn = () => {
         let auth = getAuth();
         await signInWithEmailAndPassword(auth, email.value, password.value)
         .then((userCredential) => {
-          history.push(`/${userCredential.user.uid}`);
           console.log(userCredential.user);
         })
         .catch((err) => {

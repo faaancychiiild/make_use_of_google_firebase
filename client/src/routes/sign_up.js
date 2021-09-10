@@ -15,7 +15,7 @@ const SignUp = () => {
             const user = userCredential.user;
             user.displayName = Username.value;
             console.log(user.displayName + "created", user.uid);
-            history.push(`/${user.uid}`);
+            history.push('/');
           })
           .catch((err) => {
             console.log(err.code, err.message);
