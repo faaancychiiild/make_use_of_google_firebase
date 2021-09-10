@@ -1,9 +1,9 @@
 import '../index.css';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import React from "react";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import { FormControl, Button, InputLabel, Input } from "@material-ui/core";
-
+import { Auth, Context } from '../context';
 
 const SignUp = () => {
     let history = useHistory();
@@ -15,8 +15,8 @@ const SignUp = () => {
           .then((userCredential) => {
             const user = userCredential.user;
             user.displayName = Username.value;
-            console.log(user.displayName + "created");
-            history.push('/home');
+            console.log(user.displayName + "created", user.uid);
+            history.push(`/${user.uid}`);
           })
           .catch((err) => {
             console.log(err.code, err.message);

@@ -9,9 +9,9 @@ const LogIn = () => {
         const { email, password } = e.target.elements;
         let auth = getAuth();
         await signInWithEmailAndPassword(auth, email.value, password.value)
-        .then((user) => {
-          history.push('/home');
-          console.log(user);
+        .then((userCredential) => {
+          history.push(`/${userCredential.user.uid}`);
+          console.log(userCredential.user);
         })
         .catch((err) => {
           console.log(err.code, err.message);

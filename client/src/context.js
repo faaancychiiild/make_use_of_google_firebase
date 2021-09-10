@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useHistory } from 'react-router';
 import app from './firebase';
-
+import Home from './routes/home';
 
 export const Context = React.createContext();
 export const Auth = ({children}) => {
@@ -15,12 +15,18 @@ export const Auth = ({children}) => {
         onAuthStateChanged(auth, () => {
         setCurrentUser(auth.currentUser);
         setPending(false);
-        history && currentUser && history.push('/home');
       });
     }, [currentUser, history]);
   
     if(pending){
       return <div id="loader"><div id="loading"></div></div>
+    }
+    if(currentUser){
+      return (
+        <div>Hello {currentUser.email}
+          <Home />
+        </div>
+      )
     }
     return (
         <Context.Provider value={currentUser}>

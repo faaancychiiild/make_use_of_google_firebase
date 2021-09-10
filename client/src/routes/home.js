@@ -1,6 +1,6 @@
 import React from 'react';
 import { getAuth, signOut } from "firebase/auth";
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 const Home = () => {
     let history = useHistory();
     const handleOut = () => {
@@ -13,7 +13,6 @@ const Home = () => {
     }
     return (
         <React.Fragment>
-            <h1>Hello there</h1>
             <button onClick={handleOut}>Sign out</button>
         </React.Fragment>
     )
