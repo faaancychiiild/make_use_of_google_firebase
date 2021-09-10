@@ -22,11 +22,7 @@ export const Auth = ({children}) => {
       return <div id="loader"><div id="loading"></div></div>
     }
     if(currentUser){
-      return (
-        <div>Hello {currentUser.email}
-          <Home />
-        </div>
-      )
+      return <Context.Provider value={currentUser}><Home /></Context.Provider>
     }
     return (
         <Context.Provider value={currentUser}>

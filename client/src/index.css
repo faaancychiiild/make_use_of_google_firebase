@@ -56,6 +56,5 @@ h4 {
   100% { transform: rotate(360deg); }
 }
 .kakao-icon {
-  display: flex;
-  justify-content: center;
+  width: 100px;
 }

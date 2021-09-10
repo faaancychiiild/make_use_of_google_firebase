@@ -3,7 +3,6 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { FormControl, Button, InputLabel, Input } from "@material-ui/core";
-import { Auth, Context } from '../context';
 
 const SignUp = () => {
     let history = useHistory();
@@ -28,7 +27,7 @@ const SignUp = () => {
             <h4>Join Kakao talks now</h4>
             <FormControl required className='form-elements' margin="dense">
                 <InputLabel htmlFor='name'>Full Name</InputLabel>
-                <Input name="name" type="text" placeholder="Name" id='name' className='input-element' />
+                <Input name="name" type="text" placeholder="Name" id='name' className='input-element'/>
             </FormControl>
             <FormControl required className='form-elements' margin="dense">
                 <InputLabel htmlFor='username'>Username</InputLabel>
