@@ -1,24 +1,26 @@
 import React from 'react';
 import { getAuth, signOut } from "firebase/auth";
-import { useHistory } from 'react-router-dom';
 import { Context } from '../context';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
+import { Button } from '@material-ui/core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+
 const Home = () => {
     
     let currentUser = useContext(Context);
-    let history = useHistory();
     const handleOut = () => {
         const auth = getAuth();
-        signOut(auth).then(() => {
-            history.goBack();
-        }).catch((err) => {
+        signOut(auth).catch((err) => {
             console.error(err);
         });
     }
     return (
             <React.Fragment>
-                {currentUser.email + ', logged in'}
-                <button onClick={handleOut}>Sign out</button>
+                <section className='account-menu'>
+                    <span className='menu-item'>{currentUser.email}</span>
+                    <Button variant='outlined' type="submit" onClick={handleOut}><FontAwesomeIcon icon={faSignOutAlt} size='lg'/></Button>
+                </section>
             </React.Fragment>
     )
 }

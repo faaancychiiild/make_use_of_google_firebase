@@ -2,7 +2,6 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useHistory } from 'react-router';
-import app from './firebase';
 import Home from './routes/home';
 
 export const Context = React.createContext();
