@@ -3,12 +3,10 @@ import { getAuth, signOut } from "firebase/auth";
 import { Context } from '../context';
 import { useContext } from 'react';
 import { Button } from '@material-ui/core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
 const Home = () => {
-    
     let currentUser = useContext(Context);
+    console.log(currentUser);
     const handleOut = () => {
         const auth = getAuth();
         signOut(auth).catch((err) => {
@@ -16,12 +14,12 @@ const Home = () => {
         });
     }
     return (
-            <React.Fragment>
+            <>
                 <section className='account-menu'>
-                    <span className='menu-item'>{currentUser.email}</span>
-                    <Button variant='outlined' type="submit" onClick={handleOut}><FontAwesomeIcon icon={faSignOutAlt} size='lg'/></Button>
+                    <span className='menu-item'><img alt='profile' src='https://previews.123rf.com/images/fokaspokas/fokaspokas1808/fokaspokas180802579/111794995-profile-person-in-circle-orange-neon-style-on-black-background-light-icon.jpg' className='tumbnail'/>{currentUser.name}</span>
+                    <Button variant='outlined' type="submit" onClick={handleOut}>Log out</Button>
                 </section>
-            </React.Fragment>
+            </>
     )
 }
 export default Home;
