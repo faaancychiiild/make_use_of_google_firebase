@@ -24,7 +24,7 @@ const SignUp = () => {
 
     return (
         <form onSubmit={handleSubmit} className='form-control'>
-            <h4>Join Kakao talks now</h4>
+            <h4>Join our community</h4>
             <FormControl required className='form-elements' margin="dense">
                 <InputLabel htmlFor='name'>Full Name</InputLabel>
                 <Input name="name" type="text" placeholder="Name" id='name' className='input-element'/>

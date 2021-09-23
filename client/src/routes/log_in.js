@@ -19,7 +19,8 @@ const LogIn = () => {
     return (
         <div>
         <form onSubmit={handleSubmit} className='form-control'>
-          <h4>Log in to kakao talks</h4>
+          <img alt='kakao' src='https://us.123rf.com/450wm/fokaspokas/fokaspokas1808/fokaspokas180801987/111837694-message-cloud-icon-orange-neon-style-on-black-background-light-icon.jpg?ver=6' className='kakao-icon'></img>
+          <h4>Welcome to Qseli</h4>
           <FormControl required className='form-elements' margin="dense">
             <InputLabel htmlFor='email'>Email</InputLabel>
             <Input className='input-element' name="email" type="email" placeholder="Email" id='email'/>
