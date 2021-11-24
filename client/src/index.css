@@ -59,6 +59,15 @@ h4 {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+.input-message {
+  padding: 10px 10px;
+  margin: 5px 10px;
+  font-size: 14px;
+  border-radius: 20px;
+  border: none;
+  background-color: darkslategray;
+  color: #fff;
+}
 .kakao-icon {
   width: 80px;
   border-radius: 50%;
@@ -89,4 +98,54 @@ h4 {
 }
 .menu-wrapper:hover {
   background-color: lightsteelblue;
+}
+.chat {
+  bottom: 5px;
+  right: 10vw;
+  position: absolute;
+  height: 60vh;
+  width: auto;
+  border-radius: 20px;
+  border: 3px solid darkslategrey;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.chat-body {
+  height: 50vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  padding: 5px 10px;
+  overflow: auto;
+  
+}
+.send-message {
+  display: flex;
+  justify-content: center;
+}
+.main {
+  width: 100%;
+  height: 100%;
+}
+.vector-send {
+  width: 25px;
+  background-color: transparent;
+  border: none;
+}
+.chat-header {
+  height: 50px;
+  width: auto;
+  background-color: darkslategrey;
+  border-radius: 10px 10px 0 0;
+}
+.single-message {
+  margin: 8px 0;
+  padding: 10px;
+  text-align: end;
+  background-color: orangered;
+  border-radius: 20px;
 }

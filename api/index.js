@@ -21,11 +21,13 @@ const io = require("socket.io")(server, {
 const router = require('./router');
 app.use(router);
 
-io.on('connection', (socket) => {
+io.on('connect', socket => {
+    socket.on('join', room => socket.join(room));
     socket.on('disconnect', () => {
         console.log('User has just left');
     });
-    socket.on('message', (obj) => {
-        socket.emit('message');
+    socket.on('messaged', message => {
+        io.to('room1').emit('message', message);
+        
     })
 });
