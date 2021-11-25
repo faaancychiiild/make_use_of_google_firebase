@@ -1,4 +1,6 @@
 #### Social media application project
 #### Technologies: 
-- ✨ React<br></br>
+- ✨ React
+- :sparkles: Node.js
+- :sparkles: Socket.io
 - 🔥 Google Firebase
